@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Puesto extends Model
+{
+    protected $table='puesto';
+
+    protected $primaryKey='idPuesto';
+
+    public $timestamps=false;
+
+
+    protected $fillable =[
+    	'idPuesto','Puesto'
+    ];
+
+    protected $guarded =[
+
+    ];
+}
