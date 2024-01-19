@@ -59,7 +59,7 @@
   			<center>
   				<div class="col-lg-12 col-sm-6 col-md-6 col-xs-12 ">
             		<div class="form-group">
-		            	<button class="btn btn-primary" type="submit">Emitir Prestamo</button>
+		            	<input type="image" src="{{asset('img/EMITIR PRESTAMO.png')}}" alt="Submit" width="40" height="40">
 		            	<!-- <button class="btn btn-danger" type="reset">Cancelar</button> -->
             		</div>
             	</div>	

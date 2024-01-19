@@ -14,7 +14,6 @@
 				<thead>
 					
 					<th class="text text-center">IdEquipo</th>
-
 					<th class="text text-center">NombreEquipo</th>
 					<th class="text text-center">Referencia</th>
 					<th class="text text-center">Cantidad</th>
@@ -24,8 +23,7 @@
                @foreach ($equipos as $equipo)
 				<tr>
 					
-					<td>{{ $equipo->idEquipo}}</td>	
-					
+					<td>{{ $equipo->idEquipo}}</td>						
 					<td>{{ $equipo->NombreEquipo}}</td>
 					<td>{{ $equipo->Referencia}}</td>
 					<td>{{ $equipo->Cantidad}}</td>

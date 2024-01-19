@@ -80,7 +80,7 @@
 		<div class="form-group text-right">
 			<div class="input-group ">
 				<span class="input-group-btn">
-					<button type="submit" class="btn btn-primary">Buscar</button>
+					<input type="image" src="{{asset('img/BUSCAR.png')}}" alt="Submit" width="40" height="40" style="margin-right: 15px;">
 				</span>
 			</div>
 		</div>

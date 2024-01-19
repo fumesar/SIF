@@ -23,14 +23,13 @@
 					<th class="text-center">Peloton</th>
 				</thead>
                @foreach ($servicio_socials as $key => $servicio_social)
-				<tr>
-					
+				<tr>					
 					<td class="text text-center">{{ $key + 1  }}</td>
 					<td>{{ $servicio_social->Nombres}}</td>
 					<td>{{ $servicio_social->Apellidos}}</td>
 					<td class="text-center">{{ $servicio_social->Telefono}}</td>
 					<td class="text-center">{{ $servicio_social->estado}}</td>
-					<td>{{ $servicio_social->seccional}}</td>
+					<td class="text-center">{{ $servicio_social->seccional}}</td>
 					<td class="text text-center">{{ $servicio_social->brigada}}</td>
 					<td class="text text-center">{{ $servicio_social->peloton}}</td>
 				</tr>

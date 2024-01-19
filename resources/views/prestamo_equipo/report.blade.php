@@ -13,12 +13,12 @@
 			<table id="exportar" class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 					
-					<th>No.</th>
-					<th>NroDocumento</th>
-					<th>Equipo</th>
-					<th>Referencia</th>
-					<th>FechaVencimiento</th>
-					<th>Nota</th>
+					<th class="text text-center">No.</th>
+					<th class="text text-center">NroDocumento</th>
+					<th class="text text-center">Equipo</th>
+					<th class="text text-center">Referencia</th>
+					<th class="text text-center">FechaVencimiento</th>
+					<th class="text text-center">Nota</th>
 				</thead>
                @foreach ($prestamo_equipos as $key => $prestamo_equipo)
 				<tr>

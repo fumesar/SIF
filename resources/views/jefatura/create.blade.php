@@ -13,7 +13,6 @@
 				</ul>
 			</div>
 			@endif
-
 			{!!Form::open(array('url'=>'jefatura','method'=>'POST','autocomplete'=>'off','files'=>'true'))!!}
             {{Form::token()}}
 			

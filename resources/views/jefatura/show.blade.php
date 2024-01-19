@@ -4,7 +4,7 @@
         <div class="col-lg-12 col-sm-6 col-md-6 col-xs-12 ">
             <div class="form-group">
                 <a href="{{URL::action('App\Http\Controllers\JefaturaControlador@index')}}"><button  class="btn btn-success">Volver</button></a>
-                <a href=""><button onclick="imprimir();" class="btn btn-success">Imprmir</button></a>
+                <a href=""><button onclick="imprimir();" class="btn btn-success">Imprimir</button></a>
             </div>
         </div>  
     </center>
@@ -365,7 +365,6 @@
 	            WinPrint.document.write(printContent.innerHTML);
 	            WinPrint.document.close();
 	        }
-
 	</script>
     @endpush
 @endsection

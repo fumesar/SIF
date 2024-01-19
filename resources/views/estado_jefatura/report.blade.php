@@ -2,7 +2,7 @@
 @section ('contenido')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3>Reporte de Estado_jefatura(s)</h3>
+		<h3>Reporte de Estado Jefatura(s)</h3>
 	</div>
 </div>
 
@@ -13,8 +13,8 @@
 			<table id="exportar" class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 					
-					<th>IdEstado</th>
-					<th>Estado</th>
+					<th class="text text-center">IdEstado</th>
+					<th class="text text-center">Estado</th>
 				</thead>
                @foreach ($estado_jefaturas as $estado_jefatura)
 				<tr>

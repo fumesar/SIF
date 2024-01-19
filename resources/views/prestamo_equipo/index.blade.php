@@ -2,7 +2,7 @@
 @section ('contenido')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3>Listado De Prestamo Equipo @can('create prestamo_equipo')<a href="prestamo_equipo/create"><button class="btn btn-success">Nuevo</button></a>@endcan</h3>
+		<h3>Listado De Prestamo Equipo @can('create prestamo_equipo')<a href="prestamo_equipo/create"><img src="{{asset('img/NUEVO.png')}}" type="image/png" height="40px" width="40px" style="margin-left: 10px;"></a>@endcan</h3>
 		@include('prestamo_equipo.search')
 	</div>
 </div>
@@ -17,36 +17,36 @@
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 					
-					<th>No</th>
-					<th>Nro Documento</th>
-					<th>Equipo</th>
-					<th>Referencia</th>
-					<th>Fecha Vencimiento</th>
-					<th>Nota</th>
-					<th>Opciones</th>
+					<th class="text text-center">No.</th>
+					<th class="text text-center">No. De Documento</th>
+					<th class="text text-center">Equipo</th>
+					<th class="text text-center">Referencia</th>
+					<th class="text text-center">Fecha Vencimiento</th>
+					<th class="text text-center">Nota</th>
+					<th class="text text-center">Opciones</th>
 				</thead>
                @foreach ($prestamo_equipos as $key => $prestamo_equipo)
 				<tr>
 					
-					<td>{{ $key + 1 }}</td>
+					<td class="text text-center">{{ $key + 1 }}</td>
 					<td>{{ $prestamo_equipo->NroDocumento}}</td>
 					<td>{{ $prestamo_equipo->NombreEquipo_equipo}}</td>
-					<td>{{ $prestamo_equipo->Referencia}}</td>
-					<td>{{ $prestamo_equipo->FechaVencimiento}}</td>
-					<td>{{ $prestamo_equipo->Nota}}</td>
-					<td>
+					<td class="text text-center">{{ $prestamo_equipo->Referencia}}</td>
+					<td class="text text-center">{{ $prestamo_equipo->FechaVencimiento}}</td>
+					<td class="text text-center">{{ $prestamo_equipo->Nota}}</td>
+					<td class="text-center">
 						@can('edit prestamo_equipo')
-						<a href="{{URL::action('App\Http\Controllers\Prestamo_equipoControlador@edit',$prestamo_equipo->idPrestamoEquipo)}}"><button class="btn btn-info">Editar</button></a>
+						<a href="{{URL::action('App\Http\Controllers\Prestamo_equipoControlador@edit',$prestamo_equipo->idPrestamoEquipo)}}"><img src="{{asset('img/EDITAR.png')}}" type="image/png" height="30px" width="30px" style="margin-right: 5px;">
 						@endcan
                         @can('delete prestamo_equipo')
-                        <a href="" data-target="#modal-delete-{{$prestamo_equipo->idPrestamoEquipo}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
+                        <a href="" data-target="#modal-delete-{{$prestamo_equipo->idPrestamoEquipo}}" data-toggle="modal"><img src="{{asset('img/ELIMINAR.png')}}" type="image/png" height="30px" width="30px" style="margin-right: 5px;">
                         @endcan
                         @can('show prestamo_equipo')
-                        <a href="{{URL::action('App\Http\Controllers\Prestamo_equipoControlador@show',$prestamo_equipo->idPrestamoEquipo)}}"><button class="btn btn-success">Ver</button></a>
+                        <a href="{{URL::action('App\Http\Controllers\Prestamo_equipoControlador@show',$prestamo_equipo->idPrestamoEquipo)}}"><img src="{{asset('img/VER.png')}}" type="image/png" height="30px" width="30px" style="margin-right: 5px;">
                         @endcan
                         @can('edit prestamo_equipo')
                         @if($prestamo_equipo->Nota=='En Prestamo')
-                        <a href="" data-target="#modal-devolver-{{$prestamo_equipo->idPrestamoEquipo}}" data-toggle="modal"><button class="btn btn-danger">Regresar</button></a>
+                        <a href="" data-target="#modal-devolver-{{$prestamo_equipo->idPrestamoEquipo}}" data-toggle="modal"><img src="{{asset('img/REGRESAR PRESTAMO.png')}}" type="image/png" height="30px" width="30px">
                         @endif
                         @endcan
 					</td>

@@ -2,7 +2,7 @@
 @section ('contenido')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3>Listado De Equipo @can('create equipo')<a href="equipo/create"><button class="btn btn-success">Nuevo</button></a>@endcan</h3>
+		<h3>Listado De Equipo @can('create equipo')<a href="equipo/create"><img src="{{asset('img/NUEVO.png')}}" type="image/png" height="40px" width="40px" style="margin-left: 10px;"></a>@endcan</h3>
 		@include('equipo.search')
 	</div>
 </div>
@@ -13,34 +13,30 @@
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 					
-					<th>Id Equipo</th>
-					
-					<th>Nombre Equipo</th>
-					<th>Referencia</th>
-					<th>Cantidad</th>
-					<th>Nro Estante</th>
-
-					<th>Opciones</th>
+					<th class="text text-center">Id Equipo</th>
+					<th class="text text-center">Nombre Equipo</th>
+					<th class="text text-center">Referencia</th>
+					<th class="text text-center">Cantidad</th>
+					<th class="text text-center">Nro Estante</th>
+					<th class="text text-center">Opciones</th>
 				</thead>
                @foreach ($equipos as $equipo)
 				<tr>
 					
-					<td>{{ $equipo->idEquipo}}</td>
-					
+					<td class="text-center">{{ $equipo->idEquipo}}</td>
 					<td>{{ $equipo->NombreEquipo}}</td>
 					<td>{{ $equipo->Referencia}}</td>
-					<td>{{ $equipo->Cantidad}}</td>
-					<td>{{ $equipo->NroEstante}}</td>
-				
-					<td>
+					<td class="text-center">{{ $equipo->Cantidad}}</td>
+					<td class="text-center">{{ $equipo->NroEstante}}</td>
+					<td class="text-center">
 						@can('edit equipo')
-						<a href="{{URL::action('App\Http\Controllers\EquipoControlador@edit',$equipo->idEquipo)}}"><button class="btn btn-info">Editar</button></a>
+						<a href="{{URL::action('App\Http\Controllers\EquipoControlador@edit',$equipo->idEquipo)}}"><img src="{{asset('img/EDITAR.png')}}" type="image/png" height="30px" width="30px" style="margin-right: 5px;">
 						@endcan
                         @can('delete equipo')
-                        <a href="" data-target="#modal-delete-{{$equipo->idEquipo}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
+                        <a href="" data-target="#modal-delete-{{$equipo->idEquipo}}" data-toggle="modal"><img src="{{asset('img/ELIMINAR.png')}}" type="image/png" height="30px" width="30px" style="margin-right: 5px;">
                         @endcan
                         @can('show equipo')
-                        <a href="{{URL::action('App\Http\Controllers\EquipoControlador@show',$equipo->idEquipo)}}"><button class="btn btn-success">Ver</button></a>
+                        <a href="{{URL::action('App\Http\Controllers\EquipoControlador@show',$equipo->idEquipo)}}"><img src="{{asset('img/VER.png')}}" type="image/png" height="30px" width="30px">
                         @endcan
 					</td>
 				</tr>

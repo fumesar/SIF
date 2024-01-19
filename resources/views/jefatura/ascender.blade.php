@@ -132,9 +132,9 @@
   				<div class="col-lg-12 col-sm-6 col-md-6 col-xs-12 ">
             		<div class="form-group">
             			@if($cumpleCursos == true and $cumpleTiempoAscenso == true)
-		            	<button class="btn btn-primary" type="submit">ASCENDER</button>
+		            	<input type="image" src="{{asset('img/ASCENDER.png')}}" alt="Submit" width="40" height="40">
 		            	@endif
-		            	<button class="btn btn-danger" type="reset">Cancelar</button>
+		            	<input type="image" src="{{asset('img/GENERAR.png')}}" alt="Submit" width="40" height="40">
             		</div>
             	</div>	
         	</center>

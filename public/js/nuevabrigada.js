@@ -11,10 +11,12 @@ function agregarBrigada()
     $('#btnDelBrigada').removeClass('hidden');
 }
 
-
+var banderaCargo = 0;
 function agregarCargo()
 {
-    $("#agregarCargo").clone().removeClass("hidden").appendTo("#cargo");
+    banderaCargo++;
+    $("#agregarCargo").clone().addClass('borrarCargo'+banderaCargo).removeClass("hidden").appendTo("#cargo");
+    $('#btnDelCargo').removeClass('hidden');
     
 }
 
@@ -28,6 +30,19 @@ function eliminarElemento(tipo)
         if( banderaBrigada == 0 )
         {
             $('#btnDelBrigada').addClass('hidden');
+        }
+    }
+}
+
+function eliminarElemento(tipo)
+{
+   if(tipo == 'cargo')
+    {
+        $('.borrarCargo'+banderaCargo).remove();
+        banderaCargo--;
+        if( banderaCargo == 0 )
+        {
+            $('#btnDelCargo').addClass('hidden');
         }
     }
 }
