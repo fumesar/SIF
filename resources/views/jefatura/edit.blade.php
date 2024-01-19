@@ -1,4 +1,8 @@
 @extends ('layouts.admin')
+
+<script type="text/javascript" src="{{asset('/js/jquery-3.7.1.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('/js/nuevabrigada.js')}}"></script>
+
 @section ('contenido')
 	<div class="row">
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
@@ -222,10 +226,11 @@
     				</select>
     			</div>
     		</div>
-    		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+    		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12" id="cargo">
     			<div class="form-group">
     				<label>Cargo(*)</label>
-    				<select name="idCargo" class="form-control">
+					<img src="{{asset('img/BUSCAR.png')}}" onclick="agregarCargo();" width="20" height="20" onMouseOver="this.style.cursor='pointer'">
+    				<select name="idCargo[]" class="form-control">
                         <option value="">Seleccionar</option>
     					@foreach ($cargos as $cargo)
     						<option 
@@ -235,6 +240,19 @@
     					@endforeach
     				</select>
     			</div>
+
+				<div class="form-group hidden" id="agregarCargo">
+    				<select name="idCargo[]" class="form-control">
+                        <option value="">Seleccionar</option>
+    					@foreach ($cargos as $cargo)
+    						<option 
+                                {{ old('idCargo',$jefatura->idCargo) == $cargo->idCargo ? 'selected' : '' }} 
+    							value="{{$cargo->idCargo}}"> {{$cargo->Cargo}}
+    						</option>
+    					@endforeach
+    				</select>
+    			</div>
+
     		</div>
     		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
     			<div class="form-group">
@@ -250,10 +268,13 @@
     				</select>
     			</div>
     		</div>
-    		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+
+    		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12" id="brigada">
     			<div class="form-group">
     				<label>Brigada(*)</label>
-    				<select name="idBrigada" class="form-control">
+					mas <img src="{{asset('img/BUSCAR.png')}}" onclick="agregarBrigada();" width="20" height="20" onMouseOver="this.style.cursor='pointer'">
+					menos<img src="{{asset('img/BUSCAR.png')}}" onclick="eliminarElemento('brigada');" class="hidden" id="btnDelBrigada" width="20" height="20" onMouseOver="this.style.cursor='pointer'" >
+					<select name="idBrigada[]" class="form-control">
                         <option value="">Seleccionar</option>
     					@foreach ($brigadas as $brigada)
     						<option 
@@ -263,7 +284,19 @@
     					@endforeach
     				</select>
     			</div>
+
+				<div class="form-group hidden" id="agregarBrigada">
+    				<select name="idBrigada[]" class="form-control">
+                        <option value="">Seleccionar</option>
+    					@foreach ($brigadas as $brigada)
+    						<option value="{{$brigada->idBrigada}}"> {{$brigada->Brigada}} </option>
+    					@endforeach
+    				</select>
+    			</div>
+				
     		</div>
+
+
     		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
     			<div class="form-group">
     				<label>Peloton(*)</label>
