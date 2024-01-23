@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JefaturaControlador;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,9 +47,11 @@ Route::resource('falta','App\Http\Controllers\FaltaControlador')->middleware('pe
 Route::resource('instructor','App\Http\Controllers\InstructorControlador')->middleware('permission:list instructor');
 Route::resource('instructoresxcurso','App\Http\Controllers\InstructoresxcursoControlador')->middleware('permission:list instructoresxcurso');
 Route::resource('jefatura','App\Http\Controllers\JefaturaControlador')->middleware('permission:list jefatura');
-    Route::get('jefatura_ascender/{id}','App\Http\Controllers\JefaturaControlador@ascender')->middleware('permission:edit jefatura');
-    Route::patch('jefatura_updaterango/{id}','App\Http\Controllers\JefaturaControlador@updaterango')->name('jefatura.updaterango')->middleware('permission:edit jefatura');
+Route::get('jefatura_ascender/{id}','App\Http\Controllers\JefaturaControlador@ascender')->middleware('permission:edit jefatura');
+Route::patch('jefatura_updaterango/{id}','App\Http\Controllers\JefaturaControlador@updaterango')->name('jefatura.updaterango')->middleware('permission:edit jefatura');
+Route::get('jefatura.brigadas/{id}',[JefaturaControlador::class,'brigadas'])->name('jefatura.brigadas');
    
+
 Route::resource('jornada','App\Http\Controllers\JornadaControlador')->middleware('permission:list jornada');
 Route::resource('localidad','App\Http\Controllers\LocalidadControlador')->middleware('permission:list localidad');
 Route::resource('matricular','App\Http\Controllers\MatricularControlador')->middleware('permission:list matricular');
