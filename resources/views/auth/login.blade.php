@@ -9,7 +9,7 @@
             
              <div class="text-center">
 
-                <img src="{{asset('img/login.png')}}" class="img-responsive m-b">
+                <img src="{{asset('img/LOGIN.png')}}" class="img-responsive m-b">
 
             </div>
         </div>
