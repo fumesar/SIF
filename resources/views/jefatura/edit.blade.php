@@ -229,8 +229,8 @@
     		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12" id="cargo">
     			<div class="form-group">
     				<label>Cargo(*)</label>
-					mas <img src="{{asset('img/BUSCAR.png')}}" onclick="agregarCargo();" width="20" height="20" onMouseOver="this.style.cursor='pointer'">
-					menos <img src="{{asset('img/BUSCAR.png')}}" onclick="eliminarElemento('cargo');" class="hidden" id="btnDelCargo" width="20" height="20" onMouseOver="this.style.cursor='pointer'" >
+					<img src="{{asset('img/MAS.png')}}" onclick="agregarCargo();" width="20" height="20" onMouseOver="this.style.cursor='pointer'">
+					<img src="{{asset('img/MENOS.png')}}" onclick="eliminarElemento('cargo');" class="hidden" id="btnDelCargo" width="20" height="20" onMouseOver="this.style.cursor='pointer'" >
     				<select name="idCargo[]" class="form-control">
                         <option value="">Seleccionar</option>
     					@foreach ($cargos as $cargo)
@@ -270,15 +270,12 @@
     		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12" id="brigada">
     			<div class="form-group">
     				<label>Brigada(*)</label>
-					mas <img src="{{asset('img/BUSCAR.png')}}" onclick="agregarBrigada();" width="20" height="20" onMouseOver="this.style.cursor='pointer'">
-					menos <img src="{{asset('img/BUSCAR.png')}}" onclick="eliminarElemento('brigada');" class="hidden" id="btnDelBrigada" width="20" height="20" onMouseOver="this.style.cursor='pointer'" >
-    				<select name="idBrigada[]" class="form-control">
+					<img src="{{asset('img/MAS.png')}}" onclick="agregarBrigada();" width="20" height="20" onMouseOver="this.style.cursor='pointer'">
+					<img src="{{asset('img/MENOS.png')}}" onclick="eliminarElemento('brigada');" class="hidden" id="btnDelBrigada" width="20" height="20" onMouseOver="this.style.cursor='pointer'" >
+    				<select name="idBrigada[]" class="form-control" required>
                         <option value="">Seleccionar</option>
     					@foreach ($brigadas as $brigada)
-    						<option 
-                                {{ old('idBrigada',$jefatura->idBrigada) == $brigada->idBrigada ? 'selected' : '' }} 
-    							value="{{$brigada->idBrigada}}"> {{$brigada->Brigada}}
-    						</option>
+    						<option value="{{$brigada->idBrigada}}"> {{$brigada->Brigada}} </option>
     					@endforeach
     				</select>
     			</div>
@@ -291,7 +288,6 @@
     					@endforeach
     				</select>
     			</div>
-				
     		</div>
 
 
